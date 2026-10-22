@@ -69,6 +69,12 @@ Este repositório é a casa pública da aplicação operacional, do código publ
 - [Roadmap público](docs/roadmap.md)
 - [Segurança e privacidade](SECURITY.md)
 
+## Posicionamento e visão de plataforma
+
+- [Posicionamento de mercado e visão de plataforma](docs/market-and-platform-vision.md)
+
+O SIBERIA Operacional é o primeiro produto proposto. Uma plataforma hospitalar mais ampla é uma visão de longo prazo a validar, não uma capacidade atualmente disponível. O documento público registra soluções relacionadas e explicita hipóteses, sem alegar pioneirismo ou superioridade não demonstrados.
+
 ## Estado do projeto
 
 **Fase pública:** estruturação da superfície pública e evolução incremental da aplicação.  

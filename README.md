@@ -2,6 +2,8 @@
 
 **Sistema Integrado de Boletim de Enfermagem Reconhecido por IA Adaptativa**
 
+A expressão “IA Adaptativa” integra o nome histórico do projeto; não afirma que exista um mecanismo de aprendizagem adaptativa implementado.
+
 O SIBERIA investiga como reduzir o retrabalho de transcrever boletins manuscritos de enfermagem para sistemas digitais. A proposta é transformar documentos autorizados em dados estruturados, preservando a origem dos campos, a incerteza da extração, a revisão humana e a rastreabilidade.
 
 > **Objetivo inicial:** avaliar se a extração assistida pode reduzir o esforço de redigitação em um fluxo delimitado, sem comprometer a exatidão ou a proteção dos dados.
@@ -43,7 +45,7 @@ O SIBERIA **não é declarado pronto para produção clínica**. Este repositór
 
 ## Estado do projeto
 
-O repositório está na fase de estruturação da documentação e evolução incremental da aplicação. A arquitetura e o roadmap registram propostas e trabalho pendente; sua presença não significa que as capacidades estejam implementadas.
+O repositório atualmente contém documentação e configuração básica; não apresenta uma implementação funcional ponta a ponta. A arquitetura e o roadmap registram propostas e trabalho pendente; sua presença não significa que as capacidades estejam implementadas.
 
 | Área | Estado declarado |
 |---|---|

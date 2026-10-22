@@ -61,13 +61,17 @@ class ApprovalRegistry:
                 action: str, now: datetime | None = None) -> None:
         now = now or datetime.now(timezone.utc)
         with self._lock:
-            grant = self._grants.pop(approval_id, None)
-        if grant is None:
-            raise ApprovalError("Approval is missing, invalid, or already used")
-        if grant.expires_at <= now:
-            raise ApprovalError("Approval has expired")
-        if (grant.tenant_id, grant.subject, grant.action) != (tenant_id, subject, action):
-            raise ApprovalError("Approval does not match tenant, subject, and action")
+            grant = self._grants.get(approval_id)
+            if grant is None:
+                raise ApprovalError("Approval is missing, invalid, or already used")
+            if grant.expires_at <= now:
+                self._grants.pop(approval_id, None)
+                raise ApprovalError("Approval has expired")
+            if (grant.tenant_id, grant.subject, grant.action) != (tenant_id, subject, action):
+                raise ApprovalError("Approval does not match tenant, subject, and action")
+            # Consume only after all bindings validate; wrong-context attempts
+            # must not invalidate a legitimate approval (denial-of-service).
+            self._grants.pop(approval_id)
 
 
 AGENT_SAFE_FIELDS = frozenset({

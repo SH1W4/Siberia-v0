@@ -72,6 +72,7 @@ Este repositório é a casa pública da aplicação operacional, do código publ
 ## Posicionamento e visão de plataforma
 
 - [Posicionamento de mercado e visão de plataforma](docs/market-and-platform-vision.md)
+- [Análise competitiva preliminar](docs/competitive-landscape.md)
 
 O SIBERIA Operacional é o primeiro produto proposto. Uma plataforma hospitalar mais ampla é uma visão de longo prazo a validar, não uma capacidade atualmente disponível. O documento público registra soluções relacionadas e explicita hipóteses, sem alegar pioneirismo ou superioridade não demonstrados.
 

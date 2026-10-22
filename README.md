@@ -2,82 +2,80 @@
 
 **Sistema Integrado de Boletim de Enfermagem Reconhecido por IA Adaptativa**
 
-O nome **SIBERIA** expressa a concepção original do projeto: aplicar inteligência artificial ao reconhecimento e à estruturação de informações presentes em boletins e documentos de enfermagem, transformando registros manuais em dados computáveis, verificáveis e úteis ao trabalho operacional.
+O SIBERIA investiga como reduzir o retrabalho de transcrever boletins manuscritos de enfermagem para sistemas digitais. A proposta é transformar documentos autorizados em dados estruturados, preservando a origem dos campos, a incerteza da extração, a revisão humana e a rastreabilidade.
 
-## Tese fundadora
+> **Objetivo inicial:** avaliar se a extração assistida pode reduzir o esforço de redigitação em um fluxo delimitado, sem comprometer a exatidão ou a proteção dos dados.
 
-> Reduzir o retrabalho das técnicas de enfermagem na reescrita de boletins clínicos manuais para o sistema digital, liberando tempo para cuidado direto ao paciente e minimizando erros de digitação.
+## Problema investigado
 
-Essa tese define o motivo de existência do SIBERIA. O problema não é simplesmente digitalizar papel ou inserir IA em um fluxo existente: é investigar como reduzir a duplicação de trabalho na passagem entre o registro clínico e o sistema digital, sem perder contexto, controle humano, rastreabilidade ou confiabilidade dos dados.
+Em processos que combinam formulários em papel e sistemas digitais, a transcrição manual pode gerar trabalho duplicado e oportunidades para inconsistências. A frequência e o impacto precisam ser verificados em cada contexto; não presumimos que todos os hospitais operem da mesma forma.
 
-A partir dessa origem, a investigação evolui para uma questão técnica mais ampla: **como transformar documentos heterogêneos em dados estruturados e operacionalmente utilizáveis, tornando explícitas a incerteza da extração, a validação humana e a proveniência de cada informação?**
+## Fluxo-alvo
 
-**Pesquisa aplicada e desenvolvimento de uma camada operacional para fluxos documentais em saúde.**
+**Documento autorizado → verificação de qualidade → extração de campos candidatos → revisão humana → validação → exportação aprovada → auditoria**
 
-O SIBERIA é uma iniciativa de pesquisa aplicada e desenvolvimento orientada à investigação de formas de transformar documentos e informações hospitalares em dados estruturados, verificáveis e úteis aos fluxos de trabalho, preservando a revisão humana, a rastreabilidade e a proteção de dados.
+1. Receber documento de teste ou material cujo uso tenha sido autorizado.
+2. Verificar formato, integridade e legibilidade.
+3. Extrair campos candidatos por OCR e/ou IA, sem tratar a saída como verdade garantida.
+4. Permitir que uma pessoa autorizada confirme, corrija, rejeite ou marque campos como ausentes ou ilegíveis.
+5. Aplicar regras documentadas e versionadas.
+6. Exportar somente registros aprovados.
+7. Preservar o histórico necessário à rastreabilidade, minimizando dados nos logs.
 
-O trabalho de investigação, formulação do problema e concepção da solução vem sendo desenvolvido de forma iterativa ao longo do tempo. **A abertura deste repositório marca a disponibilização da camada pública do projeto**: um espaço para documentar a direção técnica, compartilhar a evolução da aplicação e tornar verificáveis os artefatos que forem efetivamente publicados. A abertura pública não representa o início da pesquisa, nem implica que todas as hipóteses já tenham sido comprovadas ou que exista uma solução implantada em ambiente clínico.
+Este é o fluxo-alvo, não uma declaração de que todas as etapas já estejam implementadas. Cada capacidade será considerada implementada quando houver código, testes e instruções reproduzíveis.
 
-## Contexto e problema investigado
+## Princípios
 
-Em fluxos hospitalares que combinam formulários em papel e sistemas digitais, a transcrição manual pode criar retrabalho e oportunidades para inconsistências. O SIBERIA investiga como apoiar esse processo por meio de captura documental, extração assistida por OCR e IA, validação explícita, revisão humana e exportação estruturada.
+- **Revisão humana:** automação não aprova registros clínicos por conta própria.
+- **Sem preenchimento inventado:** valores ausentes, ilegíveis ou incertos permanecem sinalizados.
+- **Proveniência:** manter a relação entre o campo extraído e sua origem quando tecnicamente disponível.
+- **Versionamento:** distinguir extrações, correções humanas e registros aprovados.
+- **Privacidade por padrão:** utilizar dados sintéticos no desenvolvimento público.
+- **Segurança por projeto:** autenticação, autorização, minimização e isolamento institucional antes de qualquer uso com dados reais.
+- **Interoperabilidade responsável:** integrações dependem de requisitos, autorização e testes.
+- **Evidência antes de alegações:** publicar métricas somente com método, condições de teste e limitações explícitas.
 
-Esse problema constitui o ponto de partida da investigação, não uma afirmação de que todos os hospitais ou unidades operam da mesma maneira. As observações devem ser contextualizadas e complementadas por evidências verificáveis antes de sustentar conclusões gerais.
+## Escopo e limites
 
-## Objetivo
+O foco inicial é um fluxo de boletim de enfermagem, com entrada por foto ou PDF como objetivo de desenvolvimento. A qualidade do OCR manuscrito em português, a usabilidade e a redução de tempo precisam ser avaliadas; não são resultados presumidos.
 
-Projetar, implementar e avaliar um fluxo assistido que permita transformar documentos de teste em dados estruturados, deixando explícitas a origem dos valores, as incertezas, as correções humanas e as limitações do processamento automatizado.
-
-### Fluxo operacional em investigação
-
-1. Receber um documento de teste ou de uso autorizado.
-2. Verificar condições básicas de legibilidade e qualidade.
-3. Extrair campos candidatos por técnicas de OCR e/ou IA.
-4. Apresentar os campos para revisão humana, destacando ausências e incertezas.
-5. Validar os valores segundo regras documentadas.
-6. Exportar os dados revisados em formato estruturado.
-7. Registrar os eventos técnicos necessários à rastreabilidade.
-
-Este fluxo descreve o objetivo de desenvolvimento. Cada etapa será considerada implementada somente quando houver código, testes e instruções reproduzíveis correspondentes.
-
-## Abordagem de pesquisa
-
-O projeto adota uma abordagem incremental, orientada por evidências:
-
-- **Problema e contexto:** documentar observações, fontes, limitações e perguntas em aberto.
-- **Hipóteses:** explicitar o que precisa ser investigado, sem tratar suposições como fatos.
-- **Experimentação:** avaliar técnicas com protocolos, conjuntos de dados e critérios definidos.
-- **Revisão humana:** tratar a saída automatizada como candidata a validação, não como verdade garantida.
-- **Avaliação:** publicar métricas somente com metodologia, condições de teste, resultados e limitações.
-- **Evolução técnica:** registrar decisões relevantes e separar funcionalidades propostas, em desenvolvimento, testadas e validadas.
-
-## Princípios de engenharia e responsabilidade
-
-- **Supervisão humana:** extrações automatizadas precisam de revisão adequada antes de serem utilizadas em processos relevantes.
-- **Privacidade por padrão:** priorizar dados sintéticos; qualquer dado real exige autorização e avaliação apropriada.
-- **Rastreabilidade:** documentar versões, correções, regras e eventos relevantes, minimizando a coleta de dados.
-- **Reprodutibilidade:** tornar os experimentos verificáveis sempre que possível.
-- **Interoperabilidade responsável:** integrações dependem de requisitos, autorização, mapeamento e testes específicos; não se presume acesso a APIs hospitalares.
-- **Acessibilidade operacional:** investigar interfaces claras, com poucos passos e adequadas a diferentes níveis de familiaridade digital.
-- **Limites clínicos:** o protótipo não substitui profissionais, não realiza diagnóstico e não deve orientar decisões assistenciais sem validação, governança e autorizações apropriadas.
-
-## Escopo desta superfície pública
-
-Este repositório é a casa pública da aplicação operacional, do código publicável, da documentação técnica do produto e das demonstrações seguras. O conhecimento interno, as notas de pesquisa restritas e o planejamento detalhado permanecem no Vault privado. A publicação de um documento ou artefato deve ocorrer após revisão de privacidade, confidencialidade, segurança e sustentação das afirmações.
-
-- [Visão da arquitetura](docs/architecture/overview.md)
-- [Roadmap público](docs/roadmap.md)
-- [Segurança e privacidade](SECURITY.md)
+O SIBERIA **não é declarado pronto para produção clínica**. Este repositório não afirma implantação hospitalar, validação clínica, certificação regulatória ou integração com AGHUse ou qualquer outro prontuário. O protótipo não substitui profissionais e não deve orientar decisões assistenciais sem governança, validação e autorizações aplicáveis.
 
 ## Estado do projeto
 
-**Fase pública:** estruturação da superfície pública e evolução incremental da aplicação.  
-**Histórico de pesquisa:** investigação e concepção vêm sendo desenvolvidas iterativamente antes desta abertura pública; detalhes específicos devem ser sustentados por registros e artefatos datados quando forem apresentados.  
-**Implementação:** não se deve inferir que o fluxo descrito esteja integralmente implementado apenas pela presença desta documentação.  
-**Validação:** não são declaradas validação clínica, implantação hospitalar, conformidade certificada ou integração com sistemas de produção sem evidências específicas.
+O repositório está na fase de estruturação da documentação e evolução incremental da aplicação. A arquitetura e o roadmap registram propostas e trabalho pendente; sua presença não significa que as capacidades estejam implementadas.
 
-## Limitações e segurança
+| Área | Estado declarado |
+|---|---|
+| Problema e escopo inicial | Documentados como hipótese de produto |
+| Arquitetura e fluxo-alvo | Propostos |
+| Aplicação funcional ponta a ponta | Não demonstrada por esta documentação |
+| OCR manuscrito avaliado | Não demonstrado |
+| Testes e métricas de desempenho | A definir e executar |
+| Piloto com dados reais | Não declarado; depende de autorização e controles prévios |
+| Integração com sistemas de produção | Fora do escopo inicial |
 
-Não publique aqui dados pessoais ou de saúde identificáveis, imagens identificáveis de prontuários, assinaturas, credenciais, tokens, segredos ou documentos internos confidenciais. Repositórios privados também exigem controles de acesso e minimização de dados. Para demonstrações públicas, utilize dados sintéticos ou materiais cuja divulgação esteja autorizada.
+## Documentação
 
-O SIBERIA está em desenvolvimento e não se destina, neste estágio, ao uso clínico em produção.
+- [Visão da arquitetura](docs/architecture/overview.md) — fluxo, componentes e decisões em aberto.
+- [Roadmap público](docs/roadmap.md) — etapas planejadas e critérios de saída.
+- [Posicionamento de mercado e visão de plataforma](docs/market-and-platform-vision.md) — tese e hipóteses de evolução.
+- [Análise competitiva preliminar](docs/competitive-landscape.md) — soluções relacionadas e limites das fontes.
+- [Segurança e privacidade](SECURITY.md) — limites para dados, segredos e relato de vulnerabilidades.
+
+## Mercado e divulgação
+
+O SIBERIA não se posiciona como o primeiro OCR médico nem declara superioridade sobre soluções existentes. A hipótese de diferenciação está na adequação a um fluxo específico de boletins de enfermagem, revisão por campo, proveniência e rastreabilidade — pontos que precisam ser avaliados na prática.
+
+Este repositório contém somente código e documentação apropriados à divulgação pública. Pesquisa restrita e planejamento confidencial permanecem fora desta superfície. Antes de publicar materiais, revise privacidade, confidencialidade, propriedade intelectual e sustentação factual das afirmações.
+
+## Segurança e uso de dados
+
+Não publique dados pessoais ou de saúde identificáveis, imagens reais de prontuários, assinaturas, credenciais, tokens, chaves, segredos ou documentos confidenciais. Repositórios privados também exigem controles de acesso e minimização de dados.
+
+Use dados sintéticos em exemplos e testes públicos. O uso futuro de dados reais exige avaliação específica de finalidade, autorização, base legal, segurança, retenção e governança institucional.
+
+---
+
+**Estado geral:** pesquisa aplicada e desenvolvimento inicial.  
+**Licença:** ainda não definida.

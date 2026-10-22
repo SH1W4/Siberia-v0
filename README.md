@@ -2,7 +2,7 @@
 
 **Superfície pública do produto e aplicação operacional do SIBERIA.**
 
-SIBERIA é um projeto de pesquisa aplicada e desenvolvimento voltado à melhoria de fluxos documentais e à estruturação de dados em contextos hospitalares. Esta repository é a casa pública da aplicação, da sua documentação técnica voltada ao produto e das demonstrações que possam ser compartilhadas com segurança.
+SIBERIA é um projeto de pesquisa aplicada e desenvolvimento voltado à melhoria de fluxos documentais e à estruturação de dados em contextos hospitalares. Este repositório é a casa pública da aplicação, da sua documentação técnica voltada ao produto e das demonstrações que possam ser compartilhadas com segurança.
 
 > **Estado atual:** repositório em fase de estruturação. A presença desta documentação não significa que as funcionalidades descritas já estejam implementadas, validadas clinicamente ou integradas a sistemas hospitalares.
 

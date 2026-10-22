@@ -81,3 +81,8 @@ Este repositório é a casa pública da aplicação operacional, do código publ
 Não publique aqui dados pessoais ou de saúde identificáveis, imagens identificáveis de prontuários, assinaturas, credenciais, tokens, segredos ou documentos internos confidenciais. Repositórios privados também exigem controles de acesso e minimização de dados. Para demonstrações públicas, utilize dados sintéticos ou materiais cuja divulgação esteja autorizada.
 
 O SIBERIA está em desenvolvimento e não se destina, neste estágio, ao uso clínico em produção.
+
+
+## Fronteira do agente (experimental)
+
+O repositório inclui um núcleo de referência para políticas de acesso e atestamento de evidências. Consulte [a arquitetura](docs/architecture/secure-agent-boundary.md). Este código não é um servidor MCP pronto para produção; não use com dados reais.

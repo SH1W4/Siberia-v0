@@ -1,5 +1,17 @@
 # SIBERIA
 
+**Sistema Integrado de Boletim de Enfermagem Reconhecido por IA Adaptativa**
+
+O nome **SIBERIA** expressa a concepção original do projeto: aplicar inteligência artificial ao reconhecimento e à estruturação de informações presentes em boletins e documentos de enfermagem, transformando registros manuais em dados computáveis, verificáveis e úteis ao trabalho operacional.
+
+## Tese fundadora
+
+> Reduzir o retrabalho das técnicas de enfermagem na reescrita de boletins clínicos manuais para o sistema digital, liberando tempo para cuidado direto ao paciente e minimizando erros de digitação.
+
+Essa tese define o motivo de existência do SIBERIA. O problema não é simplesmente digitalizar papel ou inserir IA em um fluxo existente: é investigar como reduzir a duplicação de trabalho na passagem entre o registro clínico e o sistema digital, sem perder contexto, controle humano, rastreabilidade ou confiabilidade dos dados.
+
+A partir dessa origem, a investigação evolui para uma questão técnica mais ampla: **como transformar documentos heterogêneos em dados estruturados e operacionalmente utilizáveis, tornando explícitas a incerteza da extração, a validação humana e a proveniência de cada informação?**
+
 **Pesquisa aplicada e desenvolvimento de uma camada operacional para fluxos documentais em saúde.**
 
 O SIBERIA é uma iniciativa de pesquisa aplicada e desenvolvimento orientada à investigação de formas de transformar documentos e informações hospitalares em dados estruturados, verificáveis e úteis aos fluxos de trabalho, preservando a revisão humana, a rastreabilidade e a proteção de dados.
